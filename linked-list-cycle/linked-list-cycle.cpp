@@ -23,7 +23,7 @@ public:
             if (slow == fast) {
                 flag = true; 
                 
-                break;
+                return true;
                 /* Return true to indicate that loop is found */
 ​
             }
@@ -31,12 +31,11 @@ public:
         
         if(!flag) return false;    
 ​
-        return true;    
+        // return true;    
         
+        return false;
         
  
     /* Return false to indeciate that ther is no loop*/
     // return false;
         
-    }
-};
