@@ -9,26 +9,34 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-    struct ListNode *slow_p = head, *fast_p = head;
- 
-    while (slow_p && fast_p && fast_p->next) 
-    {
-        slow_p = slow_p->next;
-        fast_p = fast_p->next->next;
- 
-        /* If slow_p and fast_p meet at 
-            some point then
-           there is a loop */
-        if (slow_p == fast_p) {
-            
- 
-            /* Return true to indicate that loop is found */
-            return true;
+        
+        ListNode* slow = head; 
+        ListNode* fast = head;
+        bool flag = false;    
+​
+        while (fast != NULL && fast->next != NULL ) {
+            slow = slow->next;
+            fast = fast->next->next;
+      /* If slow_p and fast_p meet at 
+                some point then
+               there is a loop */
+            if (slow == fast) {
+                flag = true; 
+                
+                break;
+                /* Return true to indicate that loop is found */
+​
+            }
         }
-    }
+        
+        if(!flag) return false;    
+​
+        return true;    
+        
+        
  
     /* Return false to indeciate that ther is no loop*/
-    return false;
+    // return false;
         
     }
 };
