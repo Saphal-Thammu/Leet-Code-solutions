@@ -52,11 +52,3 @@ private:
             curr=fast;
             fast=fast->next;
         }
-        
-        curr->next = prev;
-        
-        return curr;
-        
-    }
-    
-};
