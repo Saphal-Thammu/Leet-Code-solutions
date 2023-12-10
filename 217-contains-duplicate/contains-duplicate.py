@@ -4,15 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        
         if (nums is None) or (len(nums) is 0):
             return False
-        
-        nums.sort()
 
-        for i in range(len(nums)-1):
-            if nums[i]==nums[i+1]:
+        myset = set()
+
+        for i in nums:
+            if i in myset:
                 return True
+            myset.add(i)
         
         return False
-
