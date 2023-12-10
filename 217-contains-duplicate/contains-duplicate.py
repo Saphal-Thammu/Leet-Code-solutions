@@ -4,8 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        # if (nums is None) or (len(nums) is 0):
-        #     return False
+        if (nums is None) or (len(nums) is 0):
+            return False
 
         myset = set()
 
