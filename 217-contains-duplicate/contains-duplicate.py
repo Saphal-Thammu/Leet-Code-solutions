@@ -7,10 +7,12 @@ class Solution(object):
         
         if (nums is None) or (len(nums) is 0):
             return False
+        
+        nums.sort()
 
-        myset = set(nums)
+        for i in range(len(nums)-1):
+            if nums[i]==nums[i+1]:
+                return True
+        
+        return False
 
-        if len(myset) == len(nums):
-            return False
-        else:
-            return True
