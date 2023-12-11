@@ -5,25 +5,19 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
-
+        
         m = len(nums)
 
         if nums is None or m==0:
             return False
 
-        l = 0
-        hset = set()
+        mydict = {}
 
-        for r in range(m):
-            if abs(l-r) > k:
-                hset.remove(nums[l])
-                l += 1
-            
-            if nums[r] in hset:
+        for i,j in enumerate(nums):
+
+            if j in mydict and abs(mydict[j] - i) <=k:
                 return True
-            else:
-                hset.add(nums[r])
+
+            mydict[j] = i
+
         return False
-
-
-
