@@ -23,18 +23,3 @@ class Solution:
                     return False
 
         return True
-
-        # for i in range(len(s)):
-            
-        #     if s[i] in my_dict:
-        #         if t[i] == my_dict[s[i]] and t[i] not in my_set:
-        #             continue
-        #         else:
-        #             return False
-            
-        #     if s[i] not in my_dict:
-        #         my_dict[s[i]] = t[i]
-        #         my_set.add(t[i])
-
-
-        # return True
