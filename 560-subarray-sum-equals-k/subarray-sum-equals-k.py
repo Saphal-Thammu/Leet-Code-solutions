@@ -28,8 +28,10 @@ class Solution:
         
         # count = 0
         # for start in range(len(nums)):
-        #     for end in range(start + 1, len(nums)+1):
-        #         sum_ = sum(nums[start:end])
+        #     for end in range(start + 1, len(nums) + 1):
+        #         sum_ = 0
+        #         for i in range(start, end):
+        #             sum_ += nums[i]
         #         if sum_ == k:
         #             count += 1
         # return count
