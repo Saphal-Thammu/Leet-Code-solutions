@@ -13,8 +13,8 @@ class Solution:
             # print(reminder)
             # print("i is {}".format(i))
 
-            if reminder not in map_d:
-                map_d[reminder] = i
+            # if reminder not in map_d:
+            #     map_d[reminder] = i
             
             # print("map_d[reminder] is {}".format(map_d[reminder]))
 
@@ -23,7 +23,7 @@ class Solution:
                 print("diff is {}".format(diff))
                 if ( diff ) >= 2:
                     return True
-            # else:
-            #     map_d[reminder] = i
+            else: # Doesn't matter if we add into the map_d before or rather after
+                map_d[reminder] = i
 
         return False
