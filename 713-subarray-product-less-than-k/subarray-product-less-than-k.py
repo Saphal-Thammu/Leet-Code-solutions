@@ -1,27 +1,49 @@
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
 
-        if len(nums) == 0 or len(nums) is None:
-            return 0
+        if nums is None or len(nums) == 0:
+            return None
 
-        l = 0
-        count = 0
         product = 1
 
-        for r in range(len(nums)):
+        left = 0
+        right = 0
+        count = 0
 
-            product = product * nums[r]
+        an = 0
 
-            if product >= k:
-                while product >=k and l<=r:
-                    product /= nums[l]
-                    l += 1
+        for i in range(len(nums)):
 
-            if product < k:
-                count += r-l + 1 # the +1 is because we can have single element array too.
+            product = product * nums[right]
+            # print (product)
 
-                
+            while (product >= k and left < right):
+
+                # print(" the left is {}".format(left))
+                # print(" the right is {}".format(left))
+
+                product //= nums[left]
+                left = left + 1
+                an = 1
+
+            if an == 1:
+                # print(" the product once we entered the above loop is {}".format(product))
+                an = 0
+
+            # print (product)
+            if product <k:
+                count = count + right - left + 1
+
+            right = right + 1
+
         return count
+
+
+
+
+
+
+
 
 
 
