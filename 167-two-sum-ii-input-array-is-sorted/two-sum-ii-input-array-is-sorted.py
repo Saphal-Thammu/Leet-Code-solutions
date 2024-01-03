@@ -2,24 +2,20 @@ class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
 
-        left, right = 0, len(numbers)-1
-        result = []
-        print(f"the target is {target}")
+        left = 0 
+        right = len(numbers) - 1
 
-        while left < right:
+        while (left < right):
 
-            sum2 = numbers[left] + numbers[right]
+            two_sum = numbers[left] + numbers[right]
 
-            print(f"the sum is {sum2}")
+            if two_sum > target:
+                right = right -1
 
-            if sum2 > target:
-                right = right - 1
-
-            elif sum2 < target:
+            elif two_sum < target:
                 left = left + 1
 
-            elif sum2 == target :
-                result.extend([left+1, right+1])
-                break
+            else:
+                return [left + 1, right + 1]
 
-        return result
+        return []
