@@ -22,11 +22,9 @@ class Solution:
 
                 if height[left] < height[right]:
                     left = left + 1
-                elif height[left] > height[right]:
-                    right = right - 1
                 else:
                     # we can move either of the pointer
-                    left = left + 1
+                    right = right - 1
 
         return max_area
 
